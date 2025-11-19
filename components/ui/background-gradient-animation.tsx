@@ -39,6 +39,7 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
+  
   useEffect(() => {
     document.body.style.setProperty(
       "--gradient-background-start",
@@ -71,7 +72,7 @@ export const BackgroundGradientAnimation = ({
     }
 
     move();
-  }, [tgX, tgY]);
+  }, [tgX, tgY, curX, curY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
@@ -81,7 +82,9 @@ export const BackgroundGradientAnimation = ({
     }
   };
 
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator?.userAgent);
+  const isSafari =
+    typeof navigator !== "undefined" &&
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   return (
     <div

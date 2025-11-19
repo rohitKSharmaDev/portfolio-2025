@@ -1,14 +1,14 @@
 import { projects } from '@/data'
-import React from 'react'
 import { PinContainer } from './ui/3d-pin'
-import { desc, div } from 'framer-motion/client'
 import { FaLocationArrow } from 'react-icons/fa'
+import Image from 'next/image'
+import bgImg from '@/public/bg.png'
 
 const RecentProjects = () => {
   return (
-    <div className="py-20" id='projects'>
+    <div className="py-20" id="projects">
       <h1 className="text-5xl text-white text-center">
-        A small selection of {" "}
+        A small selection of{" "}
         <span className="text-purple-300">recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
@@ -20,9 +20,14 @@ const RecentProjects = () => {
             <PinContainer title={link} href={link}>
               <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] sm:h-[40vh] h-[30vh] mb-10">
                 <div className="realtive w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
-                  <img src="/bg.png" alt="Background image" />
+                  <Image src={bgImg} alt="Background image" />
                 </div>
-                <img src={img} alt={title} className="absolute z-10 bottom-0" />
+                <Image
+                  src={img}
+                  alt={title}
+                  fill
+                  className="absolute z-10 bottom-0"
+                />
               </div>
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-white">
                 {title}
@@ -41,7 +46,7 @@ const RecentProjects = () => {
                         transform: `translateX(-${10 * index * 2}px)`,
                       }}
                     >
-                      <img src={icon} alt={icon} className="p-2" />
+                      <Image src={icon} fill alt={icon} className="p-2" />
                     </div>
                   ))}
                 </div>

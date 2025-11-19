@@ -2,6 +2,7 @@ import React from 'react'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
 import { socialMedia } from '@/data'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -38,11 +39,12 @@ const Footer = () => {
                 key={profile.id}
                 className="w-10 h-10 cursor-pointer flex justify-center items-center hover:scale-110 transition-transform"
               >
-                <img
+                <Image
                   src={profile.img}
-                  alt={profile.id}
+                  alt="Social Media Icon"
                   width={24}
                   height={24}
+                  loading='lazy'
                 />
               </div>
             ))}

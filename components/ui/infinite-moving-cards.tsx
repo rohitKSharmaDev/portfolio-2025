@@ -1,7 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import profilePic from "@/public/profile.svg";
 
 export const InfiniteMovingCards = ({
   items,
@@ -23,9 +25,6 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, []);
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -43,6 +42,7 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -58,6 +58,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -69,6 +70,13 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
+  useEffect(() => {
+    Promise.resolve().then(() => {
+      addAnimation();
+    });
+  }, []);
+  
   return (
     <div
       ref={containerRef}
@@ -101,7 +109,7 @@ export const InfiniteMovingCards = ({
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
                   <div className="me-3">
-                    <img src="/profile.svg" alt="Profile" />
+                    <Image src={profilePic} alt="Profile" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="leading-[1.6] text-xl font-bold text-gray-200">

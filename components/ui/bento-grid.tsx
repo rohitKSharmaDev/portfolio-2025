@@ -1,5 +1,5 @@
 'use client';
-// import Image from "next/image";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { GlobeDemo } from "./GridGlobe";
@@ -49,8 +49,8 @@ export const BentoGridItem = ({
   titleClassName,
   spareImg,
 }: ItemProps) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["ReactJS", "Next.JS", "Typescript"];
+  const rightLists = ["Accessibility(a11y)", "Web Vitals", "Mirco front-end"];
 
   const [copied, setCopied] = useState(false);
 
@@ -75,9 +75,12 @@ export const BentoGridItem = ({
         {img && (
           <div className="w-full h-full absolute">
             {img && (
-              <img
+              <Image
                 src={img}
                 alt={img}
+                width={689}
+                height={541}
+                loading="lazy"
                 className={cn(imgClassName, "object-cover object-center")}
               />
             )}
@@ -91,9 +94,11 @@ export const BentoGridItem = ({
             }`}
           >
             {spareImg && (
-              <img
+              <Image
                 src={spareImg}
                 alt={spareImg}
+                loading="lazy"
+                fill
                 className={"object-cover object-center w-full h-full"}
               />
             )}
@@ -101,7 +106,6 @@ export const BentoGridItem = ({
         )}
 
         {id === 6 && (
-          // add background animation , remove the p tag
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
           </BackgroundGradientAnimation>
@@ -126,7 +130,7 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3">
               <div className="flex flex-col gap-3 lg:gap-8">
-                {["React.js", "Next.js", "TypeScript"].map((tech, index) => (
+                {leftLists.map((tech) => (
                   <span
                     key={tech}
                     className="py-2 lg:py-2 lg:px-3 px-3 text-xs lg:text-base text-white opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
@@ -139,16 +143,14 @@ export const BentoGridItem = ({
 
               <div className="flex flex-col gap-3 lg:gap-8">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
-                {["Accessibility(a11y)", "Web Vitals", "Mirco front-end"].map(
-                  (tech, index) => (
-                    <span
-                      key={tech}
-                      className="py-2 lg:py-2 lg:px-3 px-3 text-xs lg:text-base text-white opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
+                {rightLists.map((tech) => (
+                  <span
+                    key={tech}
+                    className="py-2 lg:py-2 lg:px-3 px-3 text-xs lg:text-base text-white opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           )}
