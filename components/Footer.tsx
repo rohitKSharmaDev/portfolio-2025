@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className="flex mt-16 md:flex-row flex-col items-center justify-between rounded-lg">
           <p className="text-gray-100 md:text-base text-sm md:font-normal font-light">
-            Copyright &copy; 2024 Rohit Sharma{" "}
+            Copyright &copy; 2025. Rohit Sharma
           </p>
 
           <div className="flex items-center md:gap-3 gap-6">
@@ -39,13 +39,15 @@ const Footer = () => {
                 key={profile.id}
                 className="w-10 h-10 cursor-pointer flex justify-center items-center hover:scale-110 transition-transform"
               >
-                <Image
-                  src={profile.img}
-                  alt="Social Media Icon"
-                  width={24}
-                  height={24}
-                  loading='lazy'
-                />
+                <a href={profile.link} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={profile.img}
+                    alt="Social Media Icon"
+                    width={24}
+                    height={24}
+                    loading='lazy'
+                  />
+                </a>
               </div>
             ))}
           </div>

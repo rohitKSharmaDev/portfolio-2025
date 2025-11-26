@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import profilePic from "@/public/profile.svg";
 
 export const InfiniteMovingCards = ({
   items,
@@ -108,9 +107,6 @@ export const InfiniteMovingCards = ({
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <div className="me-3">
-                    <Image src={profilePic} alt="Profile" />
-                  </div>
                   <div className="flex flex-col gap-1">
                     <span className="leading-[1.6] text-xl font-bold text-gray-200">
                       {item.name}

@@ -1,6 +1,6 @@
 import { InfiniteMovingCards } from './ui/infinite-moving-cards'
-import { companies, testimonials } from '@/data'
-import Image from 'next/image';
+import { testimonials } from '@/data'
+// import Image from 'next/image';
 
 const Clients = () => {
   return (
@@ -16,7 +16,7 @@ const Clients = () => {
           speed="slow"
         />
 
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 mt-10 w-full">
+        {/* <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 mt-10 w-full">
           {companies.map(({ id, img, name, nameImg }) => (
             <div key={id} className="flex md:max-w-60 max-w-32 gap-2">
               <Image
@@ -38,7 +38,7 @@ const Clients = () => {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
