@@ -15,10 +15,10 @@ const RecentProjects = () => {
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <div
             key={id}
-            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
+            className="sm:h-164 h-128 lg:min-h-130 flex items-center justify-center sm:w-[570px] w-[80vw]"
           >
             <PinContainer title={link} href={link}>
-              <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] sm:h-[40vh] h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden h-[40vh] mb-10">
                 <div className="realtive w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
                   <Image src={bgImg} alt="Background image" />
                 </div>
@@ -41,7 +41,7 @@ const RecentProjects = () => {
                   {iconLists.map((icon, index) => (
                     <div
                       key={icon}
-                      className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex items-center justify-center mx-1"
+                      className="border border-white/20 rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex items-center justify-center mx-1"
                       style={{
                         transform: `translateX(-${10 * index * 2}px)`,
                       }}
